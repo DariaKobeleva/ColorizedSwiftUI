@@ -61,13 +61,14 @@ struct RGBSliderView: View {
     let tintColor: Color
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 5) {
             Text("\(colorSlider):").foregroundStyle(.gray)
-            //.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                .frame(width: 54, alignment: .leading)
             
             Text(lround(sliderValue).formatted()).foregroundStyle(.gray)
                 .bold()
-              //  .multilineTextAlignment(.trailing)
+                .frame(width: 35, alignment: .center)
+            
             Slider(value: $sliderValue, in: 0...255, step: 1)
                 .colorMultiply(.white)
                 .tint(tintColor)
