@@ -11,7 +11,7 @@ import SwiftUI
 struct ColorizedSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(color: .cyan)
         }
     }
 }
