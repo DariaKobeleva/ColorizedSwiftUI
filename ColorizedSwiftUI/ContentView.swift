@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+enum ActiveTextField {
+    case red, green, blue
+}
+
 struct ContentView: View {
-    @FocusState private var isTextFieldFocused: Bool
+    @FocusState private var activeTextField: ActiveTextField?
     
     @State private var redSlider = Double.random(in: 0...255)
     @State private var greenSlider = Double.random(in: 0...255)
@@ -33,21 +37,21 @@ struct ContentView: View {
                 HStack(spacing: 8) {
                     VStack(spacing: 20) {
                         RGBSliderView(
-                            sliderValue: $redSlider, 
+                            sliderValue: $redSlider,
                             textFieldValue: $redTextFieldValue,
                             colorSlider: "Red",
                             tintColor: .red
                         )
                         
                         RGBSliderView(
-                            sliderValue: $greenSlider, 
+                            sliderValue: $greenSlider,
                             textFieldValue: $greenTextFieldValue,
                             colorSlider: "Green",
                             tintColor: .green
                         )
                         
                         RGBSliderView(
-                            sliderValue: $blueSlider, 
+                            sliderValue: $blueSlider,
                             textFieldValue: $blueTextFieldValue,
                             colorSlider: "Blue",
                             tintColor: .blue
@@ -59,24 +63,27 @@ struct ContentView: View {
                             sliderValue: $redSlider,
                             textFieldValue: $redTextFieldValue
                         )
+                        .focused($activeTextField, equals: .red)
                         
                         TextFieldView(
                             sliderValue: $greenSlider,
                             textFieldValue: $greenTextFieldValue
                         )
+                        .focused($activeTextField, equals: .green)
                         
                         TextFieldView(
                             sliderValue: $blueSlider,
                             textFieldValue: $blueTextFieldValue
                         )
+                        .focused($activeTextField, equals: .blue)
                     }
-                    .focused($isTextFieldFocused)
+                    
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {
                             Spacer()
                             Button("Done") {
-                                isTextFieldFocused = false
-                                
+                                applyTextFieldsValue()
+                                activeTextField = nil
                             }
                         }
                     }
@@ -89,77 +96,22 @@ struct ContentView: View {
     }
 }
 
+private extension ContentView {
+    func applyTextFieldsValue() {
+        if let value = Double(redTextFieldValue), (0...255).contains(value) {
+            redSlider = value
+        }
+        if let value = Double(greenTextFieldValue), (0...255).contains(value) {
+            greenSlider = value
+        }
+        if let value = Double(blueTextFieldValue), (0...255).contains(value) {
+            blueSlider = value
+        }
+    }
+}
+
 #Preview {
     ContentView()
 }
 
-struct RGBSliderView: View {
-    @Binding var sliderValue: Double
-    @Binding var textFieldValue: String
-    
-    let colorSlider: String
-    let tintColor: Color
-    
-    var body: some View {
-        HStack(spacing: 5) {
-            Text("\(colorSlider):").foregroundStyle(.gray)
-                .frame(width: 54, height: 30, alignment: .leading)
-            
-            Text(lround(sliderValue).formatted()).foregroundStyle(.gray)
-                .bold()
-                .frame(width: 35, height: 30, alignment: .center)
-            
-            Slider(value: $sliderValue, in: 0...255, step: 1)
-                .onChange(of: sliderValue) {
-                    textFieldValue = String(format: "%.0f", sliderValue)
-                }
-                .colorMultiply(.white)
-                .tint(tintColor)
-        }
-    }
-}
 
-struct ColorMixView: View {
-    @Binding var redSlider: Double
-    @Binding var greenSlider: Double
-    @Binding var blueSlider: Double
-    
-    var color: Color {
-        Color(red: redSlider / 255,
-              green: greenSlider / 255,
-              blue: blueSlider / 255
-        )
-    }
-    
-    var body: some View {
-        color
-            .frame(width: 343, height: 179)
-            .clipShape(.rect(cornerRadius: 20))
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.white, lineWidth: 4)
-            )
-            .shadow(color: color, radius: 8)
-    }
-}
-
-struct TextFieldView: View {
-    @Binding var sliderValue: Double
-    @Binding var textFieldValue: String
-    
-    var body: some View {
-        TextField(textFieldValue, text: $textFieldValue, onCommit: {
-            if let value = Double(textFieldValue), (0...255).contains(value) {
-                sliderValue = value
-            }
-        })
-        
-        .frame(width: 45)
-        .multilineTextAlignment(.center)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
-        .onAppear {
-            textFieldValue = String(format: "%.0f", sliderValue)
-        }
-        .keyboardType(.numberPad)
-    }
-}
