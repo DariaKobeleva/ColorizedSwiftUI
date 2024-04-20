@@ -14,13 +14,15 @@ enum ActiveTextField {
 struct ContentView: View {
     @FocusState private var activeTextField: ActiveTextField?
     
-    @State private var redSlider = Double.random(in: 0...255)
-    @State private var greenSlider = Double.random(in: 0...255)
-    @State private var blueSlider = Double.random(in: 0...255)
+    @State private var redSliderValue = Double.random(in: 0...255)
+    @State private var greenSliderValue = Double.random(in: 0...255)
+    @State private var blueSliderValue = Double.random(in: 0...255)
     
     @State private var redTextFieldValue = ""
     @State private var greenTextFieldValue = ""
     @State private var blueTextFieldValue = ""
+    
+    @State private var isPresented = false
     
     var body: some View {
         
@@ -29,29 +31,29 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 ColorMixView(
-                    redSlider: $redSlider,
-                    greenSlider: $greenSlider,
-                    blueSlider: $blueSlider
+                    redSlider: $redSliderValue,
+                    greenSlider: $greenSliderValue,
+                    blueSlider: $blueSliderValue
                 )
                 
                 HStack(spacing: 8) {
                     VStack(spacing: 20) {
                         RGBSliderView(
-                            sliderValue: $redSlider,
+                            sliderValue: $redSliderValue,
                             textFieldValue: $redTextFieldValue,
                             colorSlider: "Red",
                             tintColor: .red
                         )
                         
                         RGBSliderView(
-                            sliderValue: $greenSlider,
+                            sliderValue: $greenSliderValue,
                             textFieldValue: $greenTextFieldValue,
                             colorSlider: "Green",
                             tintColor: .green
                         )
                         
                         RGBSliderView(
-                            sliderValue: $blueSlider,
+                            sliderValue: $blueSliderValue,
                             textFieldValue: $blueTextFieldValue,
                             colorSlider: "Blue",
                             tintColor: .blue
@@ -60,30 +62,35 @@ struct ContentView: View {
                     
                     VStack(spacing: 14) {
                         TextFieldView(
-                            sliderValue: $redSlider,
+                            sliderValue: $redSliderValue,
                             textFieldValue: $redTextFieldValue
                         )
                         .focused($activeTextField, equals: .red)
                         
                         TextFieldView(
-                            sliderValue: $greenSlider,
+                            sliderValue: $greenSliderValue,
                             textFieldValue: $greenTextFieldValue
                         )
                         .focused($activeTextField, equals: .green)
                         
                         TextFieldView(
-                            sliderValue: $blueSlider,
+                            sliderValue: $blueSliderValue,
                             textFieldValue: $blueTextFieldValue
                         )
                         .focused($activeTextField, equals: .blue)
                     }
                     
+                    //Не поняла, как вынести в отдельный modifier toolbar, проблема возникла с  activeTextField.
+                    //Может и не надо выносить
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {
                             Spacer()
-                            Button("Done") {
+                            Button("Done", action: {
                                 applyTextFieldsValue()
                                 activeTextField = nil
+                            })
+                            .alert("Invalid Input", isPresented: $isPresented, actions: {}) {
+                                Text("Enter value between 0 and 255")
                             }
                         }
                     }
@@ -96,16 +103,28 @@ struct ContentView: View {
     }
 }
 
+//Алексей, подскажите пожалуйста, как убрать дублирование кода в этой функции?)
 private extension ContentView {
     func applyTextFieldsValue() {
         if let value = Double(redTextFieldValue), (0...255).contains(value) {
-            redSlider = value
+            redSliderValue = value
+        } else {
+            redTextFieldValue = lround(redSliderValue).formatted()
+            isPresented.toggle()
         }
+        
         if let value = Double(greenTextFieldValue), (0...255).contains(value) {
-            greenSlider = value
+            greenSliderValue = value
+        } else {
+            greenTextFieldValue = lround(greenSliderValue).formatted()
+            isPresented.toggle()
         }
+        
         if let value = Double(blueTextFieldValue), (0...255).contains(value) {
-            blueSlider = value
+            blueSliderValue = value
+        } else {
+            blueTextFieldValue = lround(blueSliderValue).formatted()
+            isPresented.toggle()
         }
     }
 }
