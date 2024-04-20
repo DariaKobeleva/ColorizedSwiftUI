@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EB51AE7C-4D9C-43CB-A7C6-1943758CC3F2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66471A02-160C-4481-A350-73079DC8536A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorizedSwiftUI/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "66471A02-160C-4481-A350-73079DC8536A - 6d4cf3dca01dae1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in ColorizedSwiftUI.ContentView.body.getter : some"
+                  moduleName = "ColorizedSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/d.kobeleva/projects/ColorizedSwiftUI/ColorizedSwiftUI/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33">
+               </Location>
+               <Location
+                  uuid = "66471A02-160C-4481-A350-73079DC8536A - 62446e76d915c2c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in ColorizedSwiftUI.ContentView.body.getter : some"
+                  moduleName = "ColorizedSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/d.kobeleva/projects/ColorizedSwiftUI/ColorizedSwiftUI/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE753AEF-4D92-4B36-B0AF-BC7650137ABF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ColorizedSwiftUI/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BE753AEF-4D92-4B36-B0AF-BC7650137ABF - 62446e76d915c2c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in ColorizedSwiftUI.ContentView.body.getter : some"
+                  moduleName = "ColorizedSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/d.kobeleva/projects/ColorizedSwiftUI/ColorizedSwiftUI/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "BE753AEF-4D92-4B36-B0AF-BC7650137ABF - 52337ba8d0a4f39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView, ColorizedSwiftUI.RGBSliderView)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(ColorizedSwiftUI.ColorMixView, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in ColorizedSwiftUI.ContentView.body.getter : some"
+                  moduleName = "ColorizedSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/d.kobeleva/projects/ColorizedSwiftUI/ColorizedSwiftUI/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
