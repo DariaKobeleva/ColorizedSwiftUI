@@ -46,7 +46,6 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(EdgeInsets(top: 16, leading: 16, bottom: 12, trailing: 16))
-            
         }
     }
 }
