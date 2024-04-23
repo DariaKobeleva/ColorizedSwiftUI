@@ -8,25 +8,34 @@
 import SwiftUI
 
 struct ColorMixView: View {
-    @Binding var redSlider: Double
-    @Binding var greenSlider: Double
-    @Binding var blueSlider: Double
-    
-    var color: Color {
-        Color(red: redSlider / 255,
-              green: greenSlider / 255,
-              blue: blueSlider / 255
-        )
-    }
+    let redSlider: Double
+    let greenSlider: Double
+    let blueSlider: Double
     
     var body: some View {
-        color
-            .frame(width: 343, height: 179)
+        Color(red: redSlider / 255, green: greenSlider / 255, blue: blueSlider / 255)
+            .frame(height: 180)
             .clipShape(.rect(cornerRadius: 20))
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.white, lineWidth: 4)
             )
-            .shadow(color: color, radius: 8)
+            .shadow(
+                color: Color(
+                    red: redSlider / 255,
+                    green: greenSlider / 255,
+                    blue: blueSlider / 255
+                ),
+                radius: 8
+            )
+    }
+}
+
+struct ColorView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.white
+            ColorMixView(redSlider: 100, greenSlider: 100, blueSlider: 100)
+        }
     }
 }

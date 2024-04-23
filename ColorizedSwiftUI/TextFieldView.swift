@@ -8,18 +8,30 @@
 import SwiftUI
 
 struct TextFieldView: View {
-    @Binding var sliderValue: Double
     @Binding var textFieldValue: String
     
+    let action: () -> Void
+    
     var body: some View {
-        TextField(textFieldValue, text: $textFieldValue)
-            .frame(width: 45)
-            .multilineTextAlignment(.center)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .onAppear {
-                textFieldValue = String(format: "%.0f", sliderValue)
+        TextField(textFieldValue, text: $textFieldValue) { _ in
+            withAnimation {
+                action()
             }
-        
-            .keyboardType(.numberPad)
+        }
+        .frame(width: 55, alignment: .trailing)
+        .multilineTextAlignment(.center)
+        .textFieldStyle(.roundedBorder)
+        .keyboardType(.numberPad)
     }
 }
+
+struct SliderValueTF_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.white
+            TextFieldView(textFieldValue: .constant("128"), action: {})
+        }
+    }
+}
+
+
