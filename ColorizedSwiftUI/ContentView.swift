@@ -15,7 +15,6 @@ struct ContentView: View {
     @State private var blueSliderValue = Double.random(in: 0...255).rounded()
     
     var body: some View {
-        
         ZStack {
             VStack(spacing: 40) {
                 ColorMixView(
