@@ -29,22 +29,22 @@ struct ContentView: View {
                         colorSlider: "Red",
                         tintColor: .red
                     )
-                    .focused($activeTextField, equals: .red)
                     
                     RGBSliderView(
                         value: $greenSliderValue,
                         colorSlider: "Green",
                         tintColor: .green
                     )
-                    .focused($activeTextField, equals: .red)
+                    
                     RGBSliderView(
                         value: $blueSliderValue,
                         colorSlider: "Blue",
                         tintColor: .blue
                     )
-                    .focused($activeTextField, equals: .red)
+                    
                 }
                 .frame(height: 150)
+                .focused($activeTextField, equals: .red)
                 .toolbar {
                     ToolbarItemGroup(placement: .keyboard) {
                         Button(action: previousField) {
